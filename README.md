@@ -19,3 +19,10 @@ This project shows how to use **classes, dictionaries, and simple user authentic
 
 ## 🔐 Admin Password
       6511
+      
+## 📥 Clone This Repository
+You can clone this project to your local machine using Git:
+
+```bash
+git clone https://github.com/Shogun65/StudentInfo-Manager.git
+
