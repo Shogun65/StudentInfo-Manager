@@ -1,10 +1,12 @@
 import sys
+the_student_names=[]
 class Student:
-
+    number_of_student=0
     def __init__(self,student_name,student_age,student_class):
         self.student_name=student_name
         self.student_age=student_age
         self.student_class=student_class
+        Student.number_of_student+=1
         
     def get_student_name(self) -> str:
         return self.student_name
@@ -23,8 +25,9 @@ student_info={
 "Furina":Student(student_name="Furina",student_age=18,student_class=11)}
 
 for i in student_list:
-    print(i)
-print("Those are student data we have!!\nif you want to see there data pleace login to admin!!")
+    the_student_names.append(i)
+print(",".join(the_student_names))
+print(f"{Student.number_of_student} student data we have!!\nif you want to see there data pleace login to admin!!")
 
 def main():
 
@@ -50,17 +53,22 @@ def student_data(reqested):
         print(f"Age:{student_age}")
         print(f"Class:{student_class}")
         print("---------------------------")
+        agian()
     else:
-        print("Student_not_find!!\n")
+        print("Student not find!!\n")
         main()
+
+def agian(show=False):
+    if show is False:
+        print("\n you want to chack other student data to?[Y/N] ")
+    x=input(": ")
+    if x.capitalize().startswith("Yes"):
+        main()
+    elif x.capitalize().startswith("No"):
+        sys.exit()
+    else:
+        agian(True)
+
 
 if __name__ =="__main__":
     main()
-
-
-
-
-
-
-
-
